@@ -7,13 +7,24 @@ const initialState = {
     error: null,
 };
 
+// export const productsFetch = createAsyncThunk(
+//     "products/productsFetch",
+//         async() => {
+//             const response = await axios.get('https://fakestoreapi.com/products/');
+//             return response?.data;
+//         }
+// );
+
+
 export const productsFetch = createAsyncThunk(
     "products/productsFetch",
         async() => {
-            const response = await axios.get('https://fakestoreapi.com/products/');
+            const response = await axios.get('https://api.escuelajs.co/api/v1/products');
             return response?.data;
         }
 );
+
+
 
 const productsSlice = createSlice({
     name: "products",

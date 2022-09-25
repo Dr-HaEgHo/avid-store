@@ -19,8 +19,8 @@ const Upcoming = () => {
                   </div>
                   <div className="ue-events">
                       {
-                          events && events.map(event => (
-                              <div className="ue-card"></div>   
+                          events && events.map((event, index) => (
+                              <div key={index}  className="ue-card"></div>   
                           ))
                       }
                   </div>

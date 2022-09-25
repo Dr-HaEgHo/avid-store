@@ -2,12 +2,22 @@
     margin: 0;
     padding :0; 
     box-sizing: border-box;
-    font-family: Poppins, sans-serif;
 }
 
 body{
-    background: #e1e1e1
+    background: #e1e1e1;
+    font-family: Roboto, sans-serif;
 }
+
+/* body::-webkit-scrollbar{
+    background: none;
+    position: absolute;
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #FFA944;
+} */
 
 input{
     border: none;
@@ -37,32 +47,44 @@ button.focus{
 .logo{
     color:#1E1E1E;
     flex: 1.2;
+    font-family: Poppins, sans-serif;
 }
 
 .logo h1{
+    cursor: pointer;
     font-size: 30px;
     font-weight: 900;
+    font-family: Poppins, sans-serif,
 }
 .logo span{
     color: #FFA944;
+    font-family: Poppins, sans-serif,
+
 }
+
+/* =------------------------------------------------------------------------------Navbar styles */
 
 .navbar {
     background: #fff;
     display: flex;
     align-items: center;
-    padding: .6rem
+    padding: .6rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 1px 1px 3px rgba(51, 51, 51, 0.3);
 }
 
 .nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background: blue; */
 }
 
 .search{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex: 4;
     gap: 1rem;
 }
@@ -91,9 +113,10 @@ button.focus{
 }
 
 .user{
-    flex: 1;
+    flex: 1.6;
     display: flex;
     align-items: center;
+    gap: 14px
 }
 
 .user-menu{
@@ -105,11 +128,11 @@ button.focus{
 .user-menu p{
     font-weight: 600;
     font-size: 14px;
-    color: #FFA944;
+    color: #333;
 }
 .user-menu h2{
     font-size: 14px;
-    color: #FFA944;
+    color: #333;
 }
 
 .user-avatar{
@@ -123,8 +146,34 @@ button.focus{
     width: 100%;
 }
 
+.shopping-cart{
+    color :#333;
+    display: flex;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+}
 
+.cart-icon{
+    font-size: 28px;
+}
 
+.shopping-cart p{
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    background: red;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color :#fff;
+    border: 3px rgb(255, 255, 255) solid;
+    font-size: 12px;
+    font-weight: 600;
+}
 
 
 
@@ -290,12 +339,15 @@ button.focus{
     justify-content: center;
     overflow: hidden;
     padding: .4rem .4rem;
+    cursor: pointer;
     box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.4);
+    /* background: yellow */
 }
 
 .carousel-div img{
     height: 100%;
     margin: .4rem;
+    pointer-events: none;
 }
 
 /* ------------------------------------------------------top selling  */
@@ -357,6 +409,7 @@ button.focus{
     width: 196px;
     background: #fff;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .tsi-card:hover{
@@ -730,30 +783,34 @@ button.focus{
 /* ----------------------------------------------Footer   */
 
 .footer{
-    height: 162px;
+    /* height: 162px; */
     width: 100%;
     background: #282828;
     margin: 80px 0 0 0;
+    padding: 24px 0;
 }
 
 .ft{
     width: 100%;
-    height: 162px;
-    padding: 20px 0;
+    /* height: 162px; */
+    /* padding: 20px 0; */
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 
 .ft-logo{
-    flex: 1
+    flex: 1;
+    cursor : pointer;
 }
 .ft-logo h1{
+    font-family: Poppins, sans-serif;
     color: #fff;
     font-size: 34px;
 }
 
 .ft-logo span{
+    font-family: Poppins, sans-serif;
     color: #FFA944;
 }
 
@@ -761,15 +818,15 @@ button.focus{
     flex: 2;
     height: 90%;
     color:rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* background: tomato; */
 }
 
 .ft-form h4{
     font-size: 14px;
     font-weight: 900;
     letter-spacing: .4px;
+    line-height: 14px;
+    margin: 0 0 12px 0;
 }
 
 .ft-form p{
@@ -779,8 +836,11 @@ button.focus{
 
 .ft-ct-form{
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
+    /* background: green; */
+    margin: 10px 0 0 0;
+    gap: 10px;
 }
 
 .ft-ct-form button{
@@ -788,24 +848,29 @@ button.focus{
     background: none;
     color: #fff;
     border-radius: 4px;
-    padding: 20px;
+    padding: 10px 20px;
+    height: 50px;
 }
 
 .ft-ct-input{
+    height: 50px;
+    width: 262px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.2);
     border: 1px rgba(255, 255, 255, 0.1) solid;
-    padding: 20px;
+    padding: 10px 20px;
     border-radius: 4px;
-    margin: 8px 0 0 0;
+    margin: 0px 0 0 0;
 }
 
 .ft-ct-input input{
     border:none;
     background: none;
     font-size: 16px;
+    padding: 0 12px 0 12px;
+    color:rgb(255, 255, 255)
 }
 
 .ft-ct-icon{
@@ -821,3 +886,274 @@ button.focus{
     width :100%;
     background: #323232;
 }
+
+.ft-download{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 106px;
+}
+
+.ft-download-icon{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ft-download-text{
+    color:#fff;
+}
+
+.ft-download-text h4{
+    font-size: 12px;
+    margin: 0 0 8px 0;
+}
+
+.ft-download-text p{
+    font-size: 12px;
+}
+
+.ft-badges{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ft-dl-icon {
+    font-size: 42px;
+    color: #FFA944;
+}
+
+/* ----------------------------------------------------------------------------------cart */
+
+.cart{
+    /* background: #FFA; */
+}
+
+.cart-flex{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.scroll-cart{
+    flex: 4;
+    height: 80vh;
+    margin: 16px 0 0 0;
+    background: #fff;
+    border-radius: 6px;
+    overflow-y: scroll;
+}
+
+.scroll-cart::-webkit-scrollbar{
+    width: 10px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-cart::-webkit-scrollbar-thumb{
+    background: #ffa8446e;
+    border-radius: 6px;
+}
+
+.cart-title{
+    border-bottom: 1px rgba(51, 51, 51, 0.1 ) solid;
+    background: rgb(255, 255, 255);
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 0 0 8px 1rem;
+    position: sticky;
+    top: 0;
+}
+
+.cart-title p {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.cart-title span {
+    font-size: 24px;
+    font-weight: 500
+}
+
+.cart-price{
+    flex: 1.4;
+    margin: 16px 0 0 0;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 6px;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ----------------------------------------------------------------------------------Cart Item section  */
+
+
+.cart-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgb(255, 255, 255);
+    /* box-shadow: 1px 3px 5px #f5f5f5; */
+    padding: 10px 10px 20px 10px;
+    margin: 10px;
+    border-bottom: 1px rgba(51, 51, 51, 0.1) solid;
+}
+
+.ci-img{
+    height: 120px;
+    aspect-ratio: 1.4;
+    border-radius: 4px ;
+    overflow: hidden;
+}
+
+.ci-mid-line{
+    height: 120px;
+    width: 0px;
+    border: none;
+    border-right: 1px rgba(51, 51, 51, 0.1) solid;
+
+}
+
+.ci-img img{
+    width: 100%;
+}
+
+.ci-info{
+    flex: 1;
+    /* background: #ffa944; */
+}
+
+.ci-title-price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ci-title{
+    font-size: 22px;
+    font-weight: 500;
+    color: #333;
+}
+
+.ci-price{
+    font-size: 24px;
+}
+
+.ci-qty{
+    font-size: 14px;
+}
+
+.ci-incr-dec{
+    display: flex;
+    align-items: center;
+    margin: 20px 0 10px 0;
+    gap :1rem;
+}
+
+.ci-incr-dec button {
+    cursor: pointer;
+    background-color: #FFA944;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+/* .ci-info button */
+
+.ci-removeButton{
+   background: none; 
+   color: #9e0000;
+   font-size: 14px;
+   margin: 2.4rem 0 0 0;
+   width:100%;
+   text-align: right;
+}
+
+.ci-removeButton:hover{
+    text-decoration: underline;
+}
+
+.ci-removeButton:active{
+    text-decoration: none;
+
+}
+
+/* ----------------------------------------------------------------------------------Total Price section  */
+
+.tp-header{
+    border-bottom: 1px rgba(51, 51, 51, 0.1) solid;
+    margin: 0 0 1rem 0;
+    padding: 0 0 10px 0;
+    color:#FFA944;
+}
+
+.tp-header h1{
+    font-size: 20px;
+}
+
+.tp-price-btn{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.tp-price{
+    width: 100%;
+}
+
+.tp-price-btn p{
+    font-size: 16px;
+    font-weight: 600;
+    padding : 0 0;
+    line-height: 20px;
+}
+
+.tp-price-btn span{
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.tp-total-price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px rgba(51, 51, 51, 0.1) solid;
+    padding : 0 0 10px 0;
+    width: 100%;
+    /* background: #FFA; */
+}
+
+.tp-btn{
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    margin : 16px 0 0 0;
+    background: #ffa944;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    transition: .2s ease-in-out;
+}
+
+.tp-btn:hover{
+    background: #e9983d;
+}
+.tp-btn:active{
+    background: #d88d38;
+}
+

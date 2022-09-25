@@ -1,8 +1,20 @@
 import { Icon } from '@iconify/react';
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../redux/features/cartSlice';
+import { productsFetch } from '../redux/features/productSlice';
+import AddToCard from './AddToCard';
 
 const MostRecent = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+   dispatch(productsFetch())
+  }, [dispatch])
+  
+
+  // const localProducts = JSON.parse(localStorage.getItem("allItems"))
 
   const products = useSelector(state => state.products.items)
 
@@ -20,19 +32,14 @@ const MostRecent = () => {
           <div className="mri-products">
             {
               products ? products.map(product => (
-                <div className="mri-card">
-                  <div className="mri-image">
-                    <img src={product.image} alt="" />
-                  </div>
-                  <p className="mri-name">{product.title} </p>
-                  <div className="mri-card-bottom">
-                    <div className="mri-prices">
-                      <p className="mri-price">₦{product.price}</p>
-                      <p className="mri-price-slashed"> ₦ {product.price+product.price*0.3} </p>
-                    </div>
-                    <button className="mri-atk">add to cart</button>
-                  </div>
-                </div>
+                <AddToCard
+                  key={product.id}
+                  id={product.id}
+                  image={product.category.image}
+                  title={product.title}
+                  price={product.price} 
+                  quantity={product.quantity}
+                />
               )): (<div>OOPS!, A big ratty error occurred</div>)
             }
           </div>

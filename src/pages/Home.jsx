@@ -1,5 +1,6 @@
+import { Icon } from '@iconify/react';
 import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Footer from '../components/Footer';
 import Hero from '../components/hero-section/Hero';
 import MostRecent from '../components/MostRecent';
@@ -11,25 +12,34 @@ import { store } from '../redux/store';
 
 const Home = () => {
 
-    // const products = useSelector((state) => state.products.items)
-
-    // const setLocalProducts = () => {
+  
+  // const setLocalProducts = () => {
     //  localStorage.setItem('allItems', JSON.stringify(products));
     // }
-
+    
     // setLocalProducts();
   
-  const items = JSON.parse(localStorage.getItem('allItems'))
+  // const dispatch = useDispatch()
+    
+  //   useEffect(() => {
+  //     dispatch(productsFetch())
+  //   }, [dispatch])
+    
+    
+    // const products = useSelector((state) => state.products.items)
 
-  console.log(items)
 
          
   return (
     <div className='home'>
-      <Hero />
+      {/* <div className="shopping-cart">
+        <Icon icon="bxs:cart" />
+        <p>{ getTotalQuantity() || 0 }</p>
+      </div> */}
+      {/* <Hero />
       <TopSellingItems />
       <QuickSales />
-      <Upcoming />
+      <Upcoming /> */}
       <MostRecent />
       <Footer/>
     </div>

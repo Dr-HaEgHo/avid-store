@@ -1,8 +1,10 @@
 import React from 'react'
 import { Icon } from '@iconify/react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const TopSellingItems = () => {
+
+  const dispatch = useDispatch()
 
   const products = useSelector((state) => state.products.items)
 
@@ -19,10 +21,15 @@ const TopSellingItems = () => {
           </div>
           <div className="tsi-products">
             {
-              products ? products.map(product => (
-                <div className="tsi-card">
+              products ? products.map((product) => (
+                <div
+                  key={product.id}
+                  onClick={() => {
+                    dispatch()
+                  }}
+                  className="tsi-card">
                   <div className="tsi-img">
-                    <img src={product.image} alt="" />
+                    <img src={product.category.image} alt="" />
                   </div>
                   <div className="tsi-content">
                     <p className='tsi-prod-name'> { product.title }</p>

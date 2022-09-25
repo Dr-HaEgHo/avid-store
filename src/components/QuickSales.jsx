@@ -22,14 +22,14 @@ const QuickSales = () => {
           <div className="qs-products">
             {
               products ? products.map(product => (
-                <div className="qs-card">
+                <div key={product.id} className="qs-card">
                   <div className="qs-img">
-                    <img src={product.image} alt="" />
+                    <img src={product.category.image} alt="" />
                   </div>
                   <div className="qs-content">
                     <p className='qs-prod-name'> { product.title }</p>
                     <p className='qs-prod-price'> ₦ { product.price }</p>
-                    <p className='qs-prod-items-left'> {product.rating.count} items left</p>
+                    <p className='qs-prod-items-left'> {product.price} items left</p>
                   </div>
                   <div className='qs-prod-bar-case'>
                     <div className='qs-prod-bar'></div>
