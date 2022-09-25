@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
 import TotalPrice from '../components/TotalPrice';
 import CartItem from './CartItem';
@@ -9,7 +9,7 @@ const Cart = () => {
 
   const getTotal = () => {
     let totalQuantity = 0
-    let totalPrice = 0
+    // let totalPrice = 0
     cart.forEach(item => {
       totalQuantity += item.quantity
     })

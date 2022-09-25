@@ -2,31 +2,18 @@ import React from 'react'
 // import { IconName } from "react-icons/ai"
 import { Icon } from '@iconify/react';
 import centerBanner from '../../assets/center-ad.png'
-import rightBanner1 from '../../assets/rightBanner1.jpg'
-import rightBanner2 from '../../assets/rightBanner2.jpg'
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate} from 'react-router-dom';
-import { addToCart } from '../../redux/features/cartSlice';
+// import rightBanner1 from '../../assets/rightBanner1.jpg'
+// import rightBanner2 from '../../assets/rightBanner2.jpg'
+import { useSelector } from 'react-redux';
+import { useNavigate} from 'react-router-dom';
+// import { addToCart } from '../../redux/features/cartSlice';
 
 const Hero = () => {
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
 
   const products = useSelector((state) => state.products.items)
-
-    const cart = useSelector((state) => state.cart)
-  
-  const getTotalQuantity = () => {
-    let total = 0;
-    cart.Footer(item => {
-      total += item.quantity
-    }) 
-    return total;
-  } 
-
-  console.log(cart)  
  
   // console.log(products)
   const links = [
@@ -43,9 +30,6 @@ const Hero = () => {
     {id : 11, title: "Smart Phones", link: "/services", icon:<Icon icon='carbon:apple' /> },
   ]
 
-  const handleAddToCart = ({id, title, image, price}) => {
-    
-  }
 
   return (
     <div className='hero'>

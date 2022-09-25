@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux";
 import {
   Routes,
   Route,
@@ -8,12 +7,6 @@ import Navbar from "./components/navbar/Navbar";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetails";
-import { fetchJewelries } from "./redux/features/jewelrySlice";
-import { productsFetch } from "./redux/features/productSlice";
-import { store } from "./redux/store";
-
-// store.useDispatch(productsFetch());
-// store.useDispatch(fetchJewelries());
 
 function App() {
   return (

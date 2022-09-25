@@ -8,7 +8,7 @@ import baby from '../../assets/baby.jpeg'
 const Navbar = () => {
 
     const cart = useSelector((state) => state.cart.cart)
-    const products = useSelector((state) => state.products.items)
+    // const products = useSelector((state) => state.products.items)
   
     const getTotalQuantity = () => {
       let total = 0;

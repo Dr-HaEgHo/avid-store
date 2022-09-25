@@ -1,14 +1,14 @@
-import { Icon } from '@iconify/react';
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+// import { Icon } from '@iconify/react';
+import React from 'react'
+// import { useDispatch, useSelector } from 'react-redux';
 import Footer from '../components/Footer';
-import Hero from '../components/hero-section/Hero';
+// import Hero from '../components/hero-section/Hero';
 import MostRecent from '../components/MostRecent';
-import QuickSales from '../components/QuickSales';
-import TopSellingItems from '../components/TopSellingItems';
-import Upcoming from '../components/Upcoming';
-import { productsFetch } from '../redux/features/productSlice';
-import { store } from '../redux/store';
+// import QuickSales from '../components/QuickSales';
+// import TopSellingItems from '../components/TopSellingItems';
+// import Upcoming from '../components/Upcoming';
+// import { productsFetch } from '../redux/features/productSlice';
+// import { store } from '../redux/store';
 
 const Home = () => {
 

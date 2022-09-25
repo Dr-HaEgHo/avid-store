@@ -13,7 +13,7 @@ const Upcoming = () => {
                     <span></span>
                     <p>Upcoming Events & Hottest Deals</p>
                     <div className="see-more">
-                      <a href="#">See more</a>
+                      <a href="/#">See more</a>
                       <Icon className='seemore' icon='akar-icons:arrow-right' />
                     </div>
                   </div>
