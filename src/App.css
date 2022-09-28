@@ -19,8 +19,42 @@ body::-webkit-scrollbar-thumb{
     background: #FFA944;
 } */
 
+.error{
+    border: 1px red solid !important; 
+    /* padding: .8rem 1rem;
+    border-radius: 4px; */
+}
+
+.not-error{
+    border: 1px rgba(51, 51, 51, 0.3) solid !important;
+    padding: .8rem 1rem;
+}
+
+.not-error:focus{
+    border: 1px rgba(51, 51, 51, 0.3) solid;
+    outline: none;
+}
+
+.not-error input:focus{
+    border: 1px rgba(51, 51, 51, 0.3) solid;
+    outline: none;
+}
+
+.p-error{
+    color: red;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+a{
+    text-decoration: none;
+}
+
+button:disabled{
+    opacity: 0.35;
+}
+
 input{
-    border: none;
     width: 100%;
     color: #333;
     font-size: 14px;
@@ -28,7 +62,7 @@ input{
 
 input:focus{
     outline: none;
-    border: none;
+    border: 1px rgba(51, 51, 51, 0.3) solid;
 }
 
 button{
@@ -40,14 +74,14 @@ button.focus{
     border: none;
 }
 
-/* .home {
+.home {
     padding: 0 0 5rem 0 
-} */
+}
 
 .logo{
     color:#1E1E1E;
     flex: 1.2;
-    font-family: Poppins, sans-serif;
+    font-family: Poppins, sans-serif;  
 }
 
 .logo h1{
@@ -59,8 +93,236 @@ button.focus{
 .logo span{
     color: #FFA944;
     font-family: Poppins, sans-serif,
+}
+
+/* =------------------------------------------------------------------------------SIGN UP styles */
+
+.sign-up {
+    background: #fff;
+    border-radius: 6px;
+    width: 40%;
+    padding: 1rem;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    box-shadow: 1px 1px 5px #bbbbbb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sign-up h1{
+    font-size: 22px;
+    color: #FFA944;
 
 }
+
+.sign-up p{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.su-form{
+    width:100%;
+    
+}
+
+.su-form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.su-form form input{
+    padding: .8rem 1rem;
+    border-radius: 4px;
+    border: 1px rgba(51, 51, 51, 0.3) solid;
+}
+
+.su-form form button{
+    background: #FFA944;
+    padding: .8rem;
+    font-size: 14px;
+    font-weight: 600;
+    color:#fff;
+    border-radius: 4px;
+    transition: .2s ease-in-out;
+}
+.su-form form button:hover{
+    background: #ec9a3d;
+}
+.su-form form button:active{
+    background: #d88d37;
+}
+
+.su-password{
+    /* background: yellow;   */
+    border-radius: 4px;  
+    border: 1px rgba(51, 51, 51, 0.3) solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem 0 0;
+}
+
+.password-error {
+    border: 1px red solid ;
+    display: flex !important;
+    border-radius: 4px; 
+    align-items: center;
+    justify-content: space-between;
+    padding:0 1rem 0 0;
+}
+
+/* .password-error input{
+    border: none !important; 
+    background: none !important; 
+}
+
+.su-password input{
+    border: none !important; 
+    background: none !important; 
+} */
+/* =------------------------------------------------------------------------------LOGIN styles */
+
+.login{
+    width:40%;
+    background: #fff;
+    padding: 1rem;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 1px 1px 5px #bbbbbb;
+}
+
+.login h1{
+    color: #FFA944;
+    font-size: 24px;
+}
+
+.login p{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.li-form{
+    width:100%;
+}
+
+.li-form form{
+    display: flex;
+    flex-direction: column;
+    gap : 14px;
+}
+
+.li-form form button{
+    background: #FFA944;
+    padding: 1rem 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 4px;
+    transition: .2s ease-in-out;
+}
+
+.li-form form button:hover{
+    background: #ec9a3d;
+}
+
+.li-form form button:active{
+    background: #d88d37;
+}
+
+.li-check{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.li-check input{
+    width: 18px;
+    height: 18px;
+}
+
+.li-check input{
+    width: 16px;
+    height: 16px;
+}
+
+.li-check .input{
+    width: 16px;
+    height: 16px;
+    background: brown;
+    border-radius: 2px;
+}
+
+.li-check p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #FFA944;
+}
+
+.li-check span{
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+}
+
+.li-check-remember{
+    display: flex;
+    align-items: center;
+    gap: 14px
+}
+
+.li-input{
+    width: 100%;
+}
+
+.li-form form input{
+    padding: .8rem 1rem;
+    background: none;
+}
+
+.li-input input{
+    padding: .8rem 1rem;
+    border-radius: 4px ;
+    border: 1px rgba(51, 51, 51, 0.3) solid;
+}
+
+.li-password{
+    display: flex;
+    align-items: center;
+    border: 1px rgba(51, 51, 51, 0.3) solid;
+    border-radius: 4px;
+    padding: 0 1rem 0 0;
+}
+
+.li-password-error {
+    border: 1px red solid;
+    display: flex !important;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem 0 0;
+}
+
+.li-password input{
+    padding: .8rem 1rem;
+    background: none;
+    border:none;
+}
+
 
 /* =------------------------------------------------------------------------------Navbar styles */
 
@@ -1075,6 +1337,7 @@ button.focus{
    margin: 2.4rem 0 0 0;
    width:100%;
    text-align: right;
+   cursor: pointer;
 }
 
 .ci-removeButton:hover{
