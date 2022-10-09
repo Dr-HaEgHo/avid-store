@@ -96,7 +96,7 @@ const ProductDetails = () => {
                 id:product.id, title:product.title, image:product.image, price:product.price
               }))
               }}
-                      className='addtoC'>ADD TO CART</p>
+                      className='addtoC'>ADD TO CART</p> 
                   </button>
                 </div>
               </div>
