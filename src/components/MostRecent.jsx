@@ -34,6 +34,15 @@ const MostRecent = () => {
               products ? products.map(product => (
                 <AddToCard
                   key={product.id}
+                  onClick={() => {
+                    dispatch(selectedProduct({
+                      id: product.id,
+                      title: product.title,
+                      image: product.category.image,
+                      price: product.price
+                    }))
+                    navigate(`/products/${product.id}/`);
+                  }}
                   id={product.id}
                   image={product.category.image}
                   title={product.title}

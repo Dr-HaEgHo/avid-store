@@ -14,7 +14,7 @@ import cartReducer from './features/cartSlice';
 const rootPersistConfig = {
   key: "root",
   storage,
-  blacklist: ["products", "jewelry"],
+  blacklist: ["jewelry"],
 
 }
 

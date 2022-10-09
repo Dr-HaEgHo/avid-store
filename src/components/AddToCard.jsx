@@ -1,14 +1,27 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../redux/features/cartSlice';
+import { selectedProduct } from '../redux/features/productSlice';
 
 const AddToCard = ({ id, title, image, price }) => {
     
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   return (
       <div>
-        <div className="mri-card">
+      <div
+        onClick={() => {
+          dispatch(selectedProduct({
+            id,
+            title,
+            image,
+            price
+          }))
+          navigate(`/products/${id}/`);
+        }}
+        className="mri-card">
             <div className="mri-image">
               <img src={image} alt="productImage.png" />
             </div>

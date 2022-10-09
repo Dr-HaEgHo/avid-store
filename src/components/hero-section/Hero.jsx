@@ -4,13 +4,16 @@ import { Icon } from '@iconify/react';
 import centerBanner from '../../assets/center-ad.png'
 // import rightBanner1 from '../../assets/rightBanner1.jpg'
 // import rightBanner2 from '../../assets/rightBanner2.jpg'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate} from 'react-router-dom';
+import { selectedProduct } from '../../redux/features/productSlice';
 // import { addToCart } from '../../redux/features/cartSlice';
 
 const Hero = () => {
 
   const navigate = useNavigate();
+
+  const dispatch = useDispatch()
 
 
   const products = useSelector((state) => state.products.items)
@@ -60,9 +63,18 @@ const Hero = () => {
             <div  className="carousel">
               {
                 products ? products.map((product) => (
-                  <div key={product.id} onClick={() => {
+                  <div
+                    key={product.id}
+                    onClick={() => {
+                    dispatch(selectedProduct({
+                      id: product.id,
+                      title: product.title,
+                      image: product.category.image,
+                      price: product.price
+                    }))
                     navigate(`/products/${product.id}/`);
-                  }} className="carousel-div">
+                  }}
+                    className="carousel-div">
                     <img src={ product.category.image } alt="backgrounds" />
                   </div>
                 )) : null

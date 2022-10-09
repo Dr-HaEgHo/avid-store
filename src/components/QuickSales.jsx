@@ -1,8 +1,14 @@
 import { Icon } from '@iconify/react'
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDebugValue } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { selectedProduct } from '../redux/features/productSlice'
 
 const QuickSales = () => {
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
     const products = useSelector(state => state.products.items)
   return (
@@ -22,7 +28,17 @@ const QuickSales = () => {
           <div className="qs-products">
             {
               products ? products.map(product => (
-                <div key={product.id} className="qs-card">
+                <div key={product.id}
+                  onClick={() => {
+                    dispatch(selectedProduct({
+                      id: product.id,
+                      title: product.title,
+                      image: product.category.image,
+                      price: product.price
+                    }))
+                    navigate(`/products/${product.id}/`);
+                  }}
+                  className="qs-card">
                   <div className="qs-img">
                     <img src={product.category.image} alt="" />
                   </div>
