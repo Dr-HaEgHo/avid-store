@@ -1,11 +1,13 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import TotalPrice from '../components/TotalPrice';
+import { selectedProduct } from '../redux/features/productSlice';
 import CartItem from './CartItem';
 
 const Cart = () => {
 
   const cart = useSelector((state) => state.cart.cart)
+  const dispatch = useDispatch()
 
   const getTotal = () => {
     let totalQuantity = 0
@@ -27,9 +29,12 @@ const Cart = () => {
                   <div className="cart-title">
                     <p>Cart </p> <span>  ({ getTotal().totalQuantity }) </span>
                   </div> 
-                <div className="cart-items">
+                <div
+                  
+                 className="cart-items">
                    {cart?.map((item) => (
-                    <CartItem
+                     <CartItem
+                       
                       key={item.id}
                       id={item.id}
                       image={item.image}

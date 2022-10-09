@@ -61,8 +61,7 @@ const Hero = () => {
               {
                 products ? products.map((product) => (
                   <div key={product.id} onClick={() => {
-                    navigate(`/products/${product.id}`);
-                    
+                    navigate(`/products/${product.id}/`);
                   }} className="carousel-div">
                     <img src={ product.category.image } alt="backgrounds" />
                   </div>

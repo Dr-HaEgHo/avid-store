@@ -1,6 +1,7 @@
 import {
   Routes,
   Route,
+  useParams,
 } from "react-router-dom";
 import './App.css'
 import Navbar from "./components/navbar/Navbar";
@@ -10,6 +11,7 @@ import SignUp from "./pages/auth/SignUp";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetails";
+
 
 function App() {
   return (

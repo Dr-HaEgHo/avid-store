@@ -15,15 +15,13 @@ const cartSlice = createSlice({
           item.id === payload.id ? true : false)
           
           // adding a new product to cart
-            let result = {...payload, quantity: 1}
+          let result = {...payload, quantity: 1}
 
           let newCartItems =  inCart ? state.cart.map((item)=> item.id === payload.id ?
            {...item, quantity: item.quantity + 1} : item) 
            : [...state.cart, result]
 
             state.cart = newCartItems;
-
-
             
         },
         incrementQuantity: (state, action) => {

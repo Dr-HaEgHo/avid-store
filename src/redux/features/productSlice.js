@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const initialState = {
     items: [],
+    selectedProduct: [],
     status: null,
     error: null,
 };
@@ -29,7 +30,12 @@ export const productsFetch = createAsyncThunk(
 const productsSlice = createSlice({
     name: "products",
     initialState,
-    reducers: {},
+    reducers: {
+        selectedProduct: (state, { payload }) => {
+            let selected = { ...payload }
+            state.selectedProduct = selected
+        }
+    },
     extraReducers: {
         [productsFetch.pending]: (state, action) => {
             state.status = 'pending'
@@ -46,4 +52,6 @@ const productsSlice = createSlice({
 })
 
 export default productsSlice.reducer;
-
+export const {
+    selectedProduct
+} = productsSlice.actions;

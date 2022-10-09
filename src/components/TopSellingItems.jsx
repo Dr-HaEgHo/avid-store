@@ -1,10 +1,13 @@
 import React from 'react'
 import { Icon } from '@iconify/react';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectedProduct } from '../redux/features/productSlice';
+import { useNavigate } from 'react-router-dom';
 
 const TopSellingItems = () => {
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const products = useSelector((state) => state.products.items)
 
@@ -25,7 +28,13 @@ const TopSellingItems = () => {
                 <div
                   key={product.id}
                   onClick={() => {
-                    dispatch()
+                    dispatch(selectedProduct({
+                      id: product.id,
+                      title: product.title,
+                      image: product.category.image,
+                      price: product.price
+                    }))
+                    navigate(`/products/${product.id}/`);
                   }}
                   className="tsi-card">
                   <div className="tsi-img">

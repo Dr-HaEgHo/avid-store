@@ -22,7 +22,7 @@ const Home = () => {
     const products = useSelector((state) => state.products.items)
 
   
-  
+   
   return (
     <div className='home'>
 
