@@ -1,13 +1,15 @@
 import { Icon } from '@iconify/react';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../redux/features/cartSlice';
-import { productsFetch } from '../redux/features/productSlice';
+import { productsFetch, selectedProduct } from '../redux/features/productSlice';
 import AddToCard from './AddToCard';
 
 const MostRecent = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   useEffect(() => {
    dispatch(productsFetch())
