@@ -9,6 +9,7 @@ import FormikForm from "./pages/auth/FormikForm";
 import Login from "./pages/auth/Login";
 import SignUp from "./pages/auth/SignUp";
 import Cart from "./pages/Cart";
+import Categories from "./pages/Categories";
 import Home from "./pages/Home";
 import ProductDetails from "./pages/ProductDetails";
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={ <Login/> } />
           <Route path="/formik" element={ <FormikForm/> } />
           <Route path="products/:prodName" element={<ProductDetails/>} /> 
+          <Route path="categories/:catName" element={<Categories/>} /> 
           <Route path="cart" element={<Cart/>} /> 
         </Route>
       </Routes>

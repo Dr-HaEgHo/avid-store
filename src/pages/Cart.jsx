@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import TotalPrice from '../components/TotalPrice';
 import { selectedProduct } from '../redux/features/productSlice';
 import CartItem from './CartItem';
+import astronaut from '../assets/astro.png';
 
 const Cart = () => {
 
@@ -29,12 +30,10 @@ const Cart = () => {
                   <div className="cart-title">
                     <p>Cart </p> <span>  ({ getTotal().totalQuantity }) </span>
                   </div> 
-                <div
-                  
-                 className="cart-items">
-                   {cart?.map((item) => (
+                <div className="cart-items">
+              {
+                cart.length > 0 ? cart.map((item) => (
                      <CartItem
-                       
                       key={item.id}
                       id={item.id}
                       image={item.image}
@@ -42,7 +41,12 @@ const Cart = () => {
                       price={item.price} 
                       quantity={item.quantity}
                     />
-                  ))}
+                )) : (
+                    <div className='cart-noItems'>
+                      <img src={astronaut} alt="astronaut" />
+                      <p>No items in cart</p>
+                    </div>)
+                  }
                 </div>
              </div>
             <div className="cart-price">

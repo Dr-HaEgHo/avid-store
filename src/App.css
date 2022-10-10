@@ -1251,6 +1251,26 @@ button.focus{
     gap: 1rem;
 }
 
+.cart-noItems{
+    width: 100%;
+    height :400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: #fFA944 */
+}
+
+.cart-noItems p{
+
+}
+
+.cart-noItems img{
+    width: 200px;
+    opacity: .3;
+}
+
+
 /* ----------------------------------------------------------------------------------Cart Item section  */
 
 
@@ -1654,7 +1674,120 @@ button.focus{
 
 .pd-right{
     flex: 1;
-    background: green;
-
+    /* background: rgb(197, 255, 197); */
 }
 
+.pd-DNR{
+    width: 100%;
+    padding: 12px 8px;
+    border-bottom: 1px #c7c7cd solid;
+    margin: 0 0 10px 0
+}
+
+.pd-DNR-p{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pd-choose{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0 16px 8px;
+}
+
+.pd-bottom{
+    
+}
+
+.pd-bottom form{
+    width: 100%
+}
+
+.pd-drop-down{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 8px 16px 8px;
+    padding: 15px 10px;
+    border: 1px #c7c7cd solid;
+    border-radius: 4px;
+    cursor:pointer;
+}
+
+.pd-door-deli{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0 8px;
+    width:100%;
+    margin: 0 0 16px 0;
+}
+
+.pd-drop-down input{
+    border: none;
+    background: none;
+    pointer-events: none;
+}
+
+.dropDownIcon{
+    font-size: 20px;
+    transition: .2s ease all;
+}
+
+.dropDownIcon:hover{
+    color: #FFA944;
+}
+
+.dropDownIcon:active{
+    color: #ffa84490;
+}
+
+.pd-drop-down input::placeholder{
+    color: #000;
+}
+
+.pd-dd-icon{
+    border: 1px rgba(0,0,0,0.4) solid;
+    border-radius: 4px;
+    min-width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pd-dd-cont{
+    width:100%;
+}
+
+.pd-dd-cont p{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.pd-dd-cont span{
+    font-size: 12px;
+    font-weight: 500;
+}
+.pd-dd-cont-top{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 6px 0;
+}
+.pd-dd-cont-top p{
+    font-size: 14px;
+    font-weight: 500;
+
+}
+.pd-dd-cont-top span{
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.pd-dd-cont-top span:hover{
+    text-decoration: underline;
+    color: #FFA944;
+}
+.pd-dd-cont-top{}

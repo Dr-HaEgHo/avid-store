@@ -20,9 +20,9 @@ const Hero = () => {
  
   // console.log(products)
   const links = [
-    {id : 1, title: "Supermarket", link: "/services", icon:<Icon icon='carbon:apple' /> },
-    {id : 2, title: "Cosmetics", link: "/services", icon:<Icon icon='carbon:apple' /> },
-    {id : 3, title: "Clothings", link: "/services", icon:<Icon icon='carbon:apple' /> },
+    {id : 1, title: "Supermarket", link: "/supermarket", icon:<Icon icon='carbon:apple' /> },
+    {id : 2, title: "Cosmetics", link: "/cosmetics", icon:<Icon icon='carbon:apple' /> },
+    {id : 3, title: "Clothings", link: "/electronics", icon:<Icon icon='carbon:apple' /> },
     {id : 4, title: "Gadgets", link: "/services", icon:<Icon icon='carbon:apple' /> },
     {id : 5, title: "Appliances", link: "/services", icon:<Icon icon='carbon:apple' /> },
     {id : 6, title: "Provisions", link: "/services", icon:<Icon icon='carbon:apple' /> },
@@ -42,7 +42,11 @@ const Hero = () => {
             <div  className='hero-links'>
               {
                 links && links.map((link) => (
-                  <div key={link.id} className="each-hero-link">
+                  <div
+                    onClick={() => {
+                      navigate(`/categories${link.link}`)
+                    }}
+                    key={link.id} className="each-hero-link">
                     {link.icon}
                     <p>{ link.title }</p>
                   </div>

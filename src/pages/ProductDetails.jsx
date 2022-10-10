@@ -14,7 +14,6 @@ const ProductDetails = () => {
   // INITIALIZING USEDISPATCH FRROM REACT-REDUX
   const [ratio, setRatio] = useState()
 
-  
   useEffect(() => {
     dispatch(productsFetch())
     pricePercentage()
@@ -32,8 +31,7 @@ const ProductDetails = () => {
     console.log(newRatio)
     return {discountPrice, myRatio}
   }
-
-
+  
     return (
       <div className='prod-dets'>
         <div className="container">
@@ -88,20 +86,73 @@ const ProductDetails = () => {
                 
                 <div>
                   <hr className='pd-hr' />
-                  <button className="pd-atk">
+                  <button
+                    onClick={() => {
+                      dispatch(addToCart({
+                      id:product.id, title:product.title, image:product.image, price:product.price
+                    }))
+                    }}
+                    className="pd-atk">
                     <Icon className='cartIcon' icon='ic:baseline-add-shopping-cart' />
                     <p
-                      onClick={() => {
-                dispatch(addToCart({
-                id:product.id, title:product.title, image:product.image, price:product.price
-              }))
-              }}
+                      
                       className='addtoC'>ADD TO CART</p> 
                   </button>
                 </div>
               </div>
             </div>
-            <div className="pd-right"></div>
+
+
+
+            {/* -------------------------------------------------------the right section of the page */}
+            <div className="pd-right">
+              <div className='pd-DNR'>
+                <p className='pd-DNR-p'>DELIVERY & RETURNS</p>
+              </div>
+              <div className='pd-bottom'>
+                <p className='pd-choose'>Choose Your Location</p>
+                <form>
+                  <div className='pd-drop-down'>
+                    <input disabled={true} type="text" placeholder='Lagos' />
+                    <Icon className='dropDownIcon' icon='ic:baseline-add-shopping-cart' />
+                  </div>
+                  <div className='pd-drop-down'>
+                    <input disabled={true} type="text" placeholder='Pick Up Station'/>
+                    <Icon className='dropDownIcon' icon='ic:baseline-add-shopping-cart' />
+                  </div>
+                </form>
+                <div className="pd-door-deli">
+                  <div className='pd-dd-icon'>
+                    <Icon className='cartIcon' icon='ic:baseline-add-shopping-cart' />
+                  </div>
+                  <div className='pd-dd-cont'>
+                    <div className='pd-dd-cont-top'>
+                      <p>Door Delivery</p>
+                      <span>Details</span>
+                    </div >
+                    <p style={{margin: "0 0 6px 0"}}>Delivery <span>₦{ Math.round(product.price * 0.3) }</span></p>
+                    <p>
+                      Delivered by <span>16 September</span> when you order within next <span>5hrs 25mins</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="pd-door-deli">
+                  <div className='pd-dd-icon'>
+                    <Icon className='cartIcon' icon='ic:baseline-add-shopping-cart' />
+                  </div>
+                  <div className='pd-dd-cont'>
+                    <div className='pd-dd-cont-top'>
+                      <p>Pickup Station</p>
+                      <span>Details</span>
+                    </div >
+                    <p style={{margin: "0 0 6px 0"}}>Delivery <span>₦{ Math.round(product.price * 0.3) }</span></p>
+                    <p>
+                      Delivered by <span>16 September</span> when you order within next <span>5hrs 25mins</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
