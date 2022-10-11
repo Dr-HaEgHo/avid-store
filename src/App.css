@@ -974,6 +974,7 @@ button.focus{
     margin: auto;
     display: flex;
     align-items: center;
+    cursor: pointer;
     justify-content: center;
 }
 
@@ -1027,6 +1028,7 @@ button.focus{
     background: #FFA944;
     border-radius: 4px; 
     color:#fff;
+    cursor: pointer;
     transition: .2s ease all;
 }
 .mri-card-bottom button:hover{
@@ -1508,9 +1510,10 @@ button.focus{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 4px;
 }
 
-.pd-thumbs-scroll-img-sel{
+.pd-thumbs-scroll div{
     height: 40px;
     width: 40px;
     overflow: hidden;
@@ -1712,6 +1715,32 @@ button.focus{
     border: 1px #c7c7cd solid;
     border-radius: 4px;
     cursor:pointer;
+    position: relative;
+}
+
+.pd-drop-down-menu{
+    position: absolute;
+    top: 102%;
+    right: 0;
+    width: 60%;
+    height: 40vh;
+    box-shadow: 0px 0px 5px #c7c7cd;
+    background: #fff;
+    /* border: 1px #c7c7cd solid; */
+    overflow-y: scroll;
+    transition: .3s ease all;
+    z-index: 12345;
+    padding: .4rem;
+    border-radius: 4px;
+}
+
+.pd-drop-down-menu::-webkit-scrollbar{
+    width:6px;
+
+}
+
+.pd-drop-down-menu::-webkit-scrollbar-thumb{
+    background: #FFA944;
 }
 
 .pd-door-deli{
@@ -1723,6 +1752,8 @@ button.focus{
     margin: 0 0 16px 0;
 }
 
+
+
 .pd-drop-down input{
     border: none;
     background: none;
@@ -1730,7 +1761,7 @@ button.focus{
 }
 
 .dropDownIcon{
-    font-size: 20px;
+    font-size: 25px;
     transition: .2s ease all;
 }
 

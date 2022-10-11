@@ -11,7 +11,7 @@ const TotalPrice = () => {
     if (cart.length > 0) {
       cart.forEach(item => {
         totalQuantity += item.quantity
-        totalPrice += item.price * item.quantity
+        totalPrice = item.price * item.quantity
       })
     }
     return { totalPrice, totalQuantity }
@@ -27,12 +27,12 @@ const TotalPrice = () => {
           {(
             <div className='tp-total-price'>
               <span>SUBTOTAL:</span>
-              <p> $ { getTotal().totalQuantity * getTotal().totalPrice }</p>
+              <p> $ { getTotal().totalPrice }</p>
             </div>   
           )}
         </div>
         <button className="tp-btn">
-          CHECKOUT(${getTotal().totalQuantity * getTotal().totalPrice})
+          CHECKOUT(${getTotal().totalPrice})
         </button>
       </div>
     </div>

@@ -4,25 +4,26 @@ import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../redux/features/cartSlice';
 import { selectedProduct } from '../redux/features/productSlice';
 
-const AddToCard = ({ id, title, image, price }) => {
+const AddToCard = ({ id, title, image, price, images }) => {
     
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
   return (
       <div>
-      <div
-        onClick={() => {
-          dispatch(selectedProduct({
-            id,
-            title,
-            image,
-            price
-          }))
-          navigate(`/products/${id}/`);
-        }}
-        className="mri-card">
-            <div className="mri-image">
+      <div>
+          <div
+            onClick={() => {
+              dispatch(selectedProduct({
+                id,
+                title,
+                image,
+                price,
+                images
+              }))
+              navigate(`/products/${id}/`);
+            }}
+             className="mri-image">
               <img src={image} alt="productImage.png" />
             </div>
             <p className="mri-name">{title} </p>
@@ -33,7 +34,7 @@ const AddToCard = ({ id, title, image, price }) => {
               </div>
               <button onClick={() => {
                 dispatch(addToCart({
-                id, title, image, price
+                id, title, image, price, images
               }))
               }} className="mri-atk">add to cart</button>
             </div>

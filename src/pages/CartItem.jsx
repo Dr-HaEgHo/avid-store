@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { decrementQuantity, incrementQuantity, removeItem } from '../redux/features/cartSlice'
 import { selectedProduct } from '../redux/features/productSlice';
 
-const CartItem = ({ id, image, title, price, quantity = 0 }) => {
+const CartItem = ({ id, image, title, price, quantity = 0, images }) => {
     
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -17,7 +17,8 @@ const CartItem = ({ id, image, title, price, quantity = 0 }) => {
                 id,
                 image,
                 title,
-                price
+                price,
+                images
               }))
               navigate(`/products/${id}`)
             }

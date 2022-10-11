@@ -37,12 +37,13 @@ const MostRecent = () => {
                 <AddToCard
                   key={product.id}
                   onClick={() => {
-                    dispatch(selectedProduct({
-                      id: product.id,
-                      title: product.title,
-                      image: product.category.image,
-                      price: product.price
-                    }))
+                    // dispatch(selectedProduct({
+                    //   id: product.id,
+                    //   title: product.title,
+                    //   image: product.category.image,
+                    //   price: product.price,
+                    //   images: product.images,
+                    // }))
                     navigate(`/products/${product.id}/`);
                   }}
                   id={product.id}
@@ -50,6 +51,7 @@ const MostRecent = () => {
                   title={product.title}
                   price={product.price} 
                   quantity={product.quantity}
+                  images={product.images}
                 />
               )): (<div>OOPS!, A big ratty error occurred</div>)
             }

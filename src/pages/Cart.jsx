@@ -40,6 +40,7 @@ const Cart = () => {
                       title={item.title}
                       price={item.price} 
                       quantity={item.quantity}
+                      images={item.images}
                     />
                 )) : (
                     <div className='cart-noItems'>
