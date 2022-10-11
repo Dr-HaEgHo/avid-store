@@ -130,7 +130,7 @@ const ProductDetails = () => {
                   <button
                     onClick={() => {
                       dispatch(addToCart({
-                      id:product.id, title:product.title, image:product.image, price:product.price
+                      id:product.id, title:product.title, image:product.category.image, price:product.price
                     }))
                     }}
                     className="pd-atk">
