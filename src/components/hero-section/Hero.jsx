@@ -7,6 +7,8 @@ import centerBanner from '../../assets/center-ad.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate} from 'react-router-dom';
 import { selectedProduct } from '../../redux/features/productSlice';
+import Lottie from "lottie-react";
+import loader from "../../assets/98915-loader.json"
 // import { addToCart } from '../../redux/features/cartSlice';
 
 const Hero = () => {
@@ -20,10 +22,10 @@ const Hero = () => {
  
   // console.log(products)
   const links = [
-    {id : 1, title: "Supermarket", link: "/supermarket", icon:<Icon icon='carbon:apple' /> },
-    {id : 2, title: "Cosmetics", link: "/cosmetics", icon:<Icon icon='carbon:apple' /> },
-    {id : 3, title: "Clothings", link: "/electronics", icon:<Icon icon='carbon:apple' /> },
-    {id : 4, title: "Gadgets", link: "/services", icon:<Icon icon='carbon:apple' /> },
+    {id : 1, title: "Electronics", link: "/Electronics", icon:<Icon icon='carbon:apple' /> },
+    {id : 2, title: "Furniture", link: "/Furniture", icon:<Icon icon='carbon:apple' /> },
+    {id : 3, title: "Clothings", link: "/Clothes", icon:<Icon icon='carbon:apple' /> },
+    {id : 4, title: "Footwear", link: "/Shoes", icon:<Icon icon='carbon:apple' /> },
     {id : 5, title: "Appliances", link: "/services", icon:<Icon icon='carbon:apple' /> },
     {id : 6, title: "Provisions", link: "/services", icon:<Icon icon='carbon:apple' /> },
     {id : 7, title: "Sneakers", link: "/services", icon:<Icon icon='carbon:apple' /> },
@@ -39,14 +41,18 @@ const Hero = () => {
       <div className="container">
         <div className="hero-sect">
           <div className='hero-top'>
-            <div  className='hero-links'>
+            <div className='hero-links'>
+              <div className="h-cat">
+                <h2>Categories</h2>
+              </div>
               {
                 links && links.map((link) => (
                   <div
                     onClick={() => {
                       navigate(`/categories${link.link}`)
                     }}
-                    key={link.id} className="each-hero-link">
+                    key={link.id}
+                    className="each-hero-link">
                     {link.icon}
                     <p>{ link.title }</p>
                   </div>
@@ -94,7 +100,8 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  )
+  ) 
 }
 
 export default Hero
+

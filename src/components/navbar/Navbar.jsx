@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import baby from '../../assets/baby.jpeg'
 
 
-const Navbar = () => {
+const Navbar = ({openNav, setOpenNav}) => {
 
     const cart = useSelector((state) => state.cart.cart)
     // const products = useSelector((state) => state.products.items)
@@ -27,6 +27,9 @@ const Navbar = () => {
     <div className='navbar'>
         <div className="container">
             <div className="nav">
+              <div onClick={() => {setOpenNav(!openNav)}} className="burg-menu">
+                <Icon className='cart-icon' icon="mi:menu" />
+              </div>
                 <div onClick={() => {navigate("/")}} className='logo'>
                     <h1>AVID<span>MALL</span></h1>
                 </div>
@@ -36,6 +39,7 @@ const Navbar = () => {
                     </div>
                     <button className="search-btn">SEARCH</button>
                 </div>
+                
                 <div className='user'>
                     <div className="user-menu">
                         <p>Hi, Timothy</p>
@@ -50,6 +54,20 @@ const Navbar = () => {
                           <p>{ getTotalQuantity() || 0 }</p>
                         </div>
                     </Link>
+                </div>
+                <div className="burger">
+                  <div className="search-icon">
+                    <Icon className='cart-icon' icon="charm:search" />
+                  </div>
+                  <div className="user-avatar">
+                      <img src={baby} alt='profilepicture.png'></img>
+                  </div>
+                  <Link to='/cart'>
+                      <div className="shopping-cart">
+                        <Icon className='cart-icon' icon="ic:outline-shopping-cart" />
+                        <p>{ getTotalQuantity() || 0 }</p>
+                      </div>
+                  </Link>
                 </div>
             </div>
         </div>

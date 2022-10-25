@@ -20,8 +20,10 @@ const Footer = () => {
                               <Icon className='ft-ct-icon' icon="ic:baseline-mail" />
                               <input type="email" placeholder='Enter Email Address' />
                           </div>
-                          <button>MALE</button>
-                          <button>FEMALE</button>
+                          <div className='ft-form-buttons'>
+                            <button>MALE</button>
+                            <button>FEMALE</button>
+                          </div>
                       </div>
                 </div>
                 <div className="ft-download">

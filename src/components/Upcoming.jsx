@@ -4,7 +4,7 @@ import React from 'react'
 const Upcoming = () => {
 
     const events = [1, 2, 3]
-
+ 
   return (
     <div className='upcoming-events'>
         <div className='container'>

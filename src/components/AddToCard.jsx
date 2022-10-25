@@ -11,7 +11,7 @@ const AddToCard = ({ id, title, image, price, images }) => {
 
   return (
       <div>
-      <div>
+      <div className='mri-card'>
           <div
             onClick={() => {
               dispatch(selectedProduct({

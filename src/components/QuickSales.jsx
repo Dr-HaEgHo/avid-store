@@ -16,7 +16,7 @@ const QuickSales = () => {
       <div className="container">
         <div className="qs">
           <div className="qs-title">
-            <p>Quick Sales</p>
+            <p className='small' >Quick Sales</p>
             <div className="qs-timer">
                 <p>Time Left: <span>05h : 09m : 42s</span></p>
             </div>

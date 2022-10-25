@@ -38,7 +38,7 @@ const CartItem = ({ id, image, title, price, quantity = 0, images }) => {
             <div className='ci-incr-dec'>
               <p className="ci-qty">Quantity: </p>
               <button style={{opacity: quantity <= 1 ? "0.4" : "1"}} onClick={() => dispatch(decrementQuantity(id))}>-</button>
-              <p>{quantity}</p>
+              <p className='ci-qty'>{quantity}</p>
               <button onClick={() => dispatch(incrementQuantity(id))}>+</button>
             </div>
             <button
