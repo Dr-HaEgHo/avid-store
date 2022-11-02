@@ -33,6 +33,20 @@
         margin: 20px 0 0 0;
     }
 
+    /* -----------------------------------------------PDODUCT DETAILS */
+
+    .pds{
+        flex-direction: column;
+        gap: 1rem;
+        height: 100%;
+        margin:  14px 0 30px 0;
+    }
+    .pd-left{
+        width: 100%;
+    }
+    .pd-right{
+        width:100%;
+    }
 }
 
 @media(max-width:650px){
@@ -343,5 +357,36 @@
     }
     .ci-mid-line{
         height: 90px;
+    }
+
+
+    /* ----------------------------------------------------product details */
+
+    .pds{
+        flex-direction: column;
+        gap: 1rem;
+        height: 100%;
+        margin:  14px 0 30px 0;
+    }
+    .pd-left{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .pd-info{
+        width: 100%;
+        flex: 1;
+    }
+    .pd-images{
+        width: 100%;
+    }
+    .pd-main-img{
+        width:100%;
+        aspect-ratio: 1;
+    }
+    .pd-main-img-wrapper img {
+        height: 100%;
+        transition: 1s;
+        border-radius: 4px
     }
 }
